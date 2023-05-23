@@ -48,6 +48,9 @@ img {
   width: 100%;
 }
 
+div.buttons {
+    color: beige;
+}
 
 @media screen and (max-width: 900px) {
     .column {

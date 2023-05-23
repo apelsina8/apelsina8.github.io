@@ -7,14 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/main.css">
   <title>Learning Site</title>
+  
 </head>
 
 <body>
   <section>
     <h1>ARHIP & ARSENIY PROFILE</h1>
     <hr>
-    <h2>Портфолио фотографа</h2>
-    <p>При уменьшении окна браузера, вы увидите, как работает адаптивность.</p>
+    <h2>Страница-резюме</h2>
+   
 
     <div class="row">
       <div class="column">
@@ -24,7 +25,7 @@
           </a>
           <h3>Чижанов А.И.</h3>
           <p>Студент группы АДБ-21-10.
-          <p>Преподаватель образовательной платформы GeekBrains</p> И просто хороший человек!</p>
+          <p>Преподаватель образовательной платформы GeekBrains </p> И просто хороший человек!</p>
         </div>
       </div>
       <div class="column">
@@ -34,9 +35,9 @@
           </a>
           <h3>Овчинников А.П.</h3>
           <p>
-            Я студент самого лучшего вуза в мире МГТУ "СТАНКИН"
-            <p>А также я работаю в компании, предоставляющей услуги интернета</p>
-            Я целеустремлённый и ответственный человек</p>
+            Cтудент самого лучшего вуза в мире МГТУ "СТАНКИН"
+            <p>Сотрудник компании предоставляющей услуги интернета</p>
+            Целеустремлённый и ответственный</p>
         </div>
       </div>
 
@@ -48,12 +49,60 @@
       </a> -->
       
       <h3>Цель совместной разработки</h3>
-      <p>Разнообразный и богатый опыт реализация намеченных плановых заданий представляет собой интересный эксперимент
-        проверки дальнейших направлений развития.</p>
-      <p>Идейные соображения высшего порядка, а также консультация с широким активом позволяет оценить значение
-        существенных финансовых и административных условий.</p>
+      <p>Наша цель заключается в получение опыта в создание сайтов, а также  добиться тесного и плодотворного сотрудничества <p>между нами для коллективного решения поставленных задач.</p></p>
     </div>
   </section>
+  <!-- <script>
+    function Likes()
+    {
+      if(confirm('Вам понравилась наша страничка?'))
+      { 
+        var likeCount =  likeCount++;
+        return likeCount
+      }
+      alert("Спасибо, что уделили время")
+    }
+  </script>
+  <script>
+    function Counter(likeCount)
+    {
+      alert('Наша страница понравилась '+likeCount+" человек");
+    }
+  </script>
+  Counter(Likes()); -->
+  <div class="buttons">
+    <p><input type="button" value=" Оцените нашу сраницу! " id="btn1" /></p>
+    
+
+    <script type="text/javascript">
+
+      var likeCount = 0;
+    function buttonClicked(likeCount){
+    // var text = (this === window) ? 'window' : this.id;
+    // alert( text );
+    if(confirm('Вам понравилась наша страничка?'))
+      { 
+        likeCount =  likeCount++;
+        return likeCount;
+      }
+      alert("Спасибо, что уделили время");
+    }
+
+    function Counter(likeCount)
+    {
+      alert('Наша страница понравилась '+likeCount+" человек");
+    }
+    
+    var button1 = document.getElementById('btn1');
+    var button2 = document.getElementById('btn2');
+
+    button1.onclick = buttonClicked;
+
+
+    button2.onclick = function(){ buttonClicked(); };
+</script>
+  </div>
+  
 </body>
 
 </html>
