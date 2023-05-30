@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/main.css">
   <title>ARHIP & ARSENIY PROFILE</title>
-  
+
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <h1>ARHIP & ARSENIY PROFILE</h1>
     <hr>
     <h2>Страница-резюме</h2>
-   
+
 
     <div class="row">
       <div class="column">
@@ -36,8 +36,8 @@
           <h3>Овчинников А.П.</h3>
           <p>
             Cтудент самого лучшего вуза в мире МГТУ "СТАНКИН"
-            <p>Сотрудник компании предоставляющей услуги интернета</p>
-            Целеустремлённый и ответственный</p>
+          <p>Сотрудник компании предоставляющей услуги интернета</p>
+          Целеустремлённый и ответственный</p>
         </div>
       </div>
 
@@ -47,9 +47,12 @@
       <!-- <a target="_blank" href="lion.jpg">
         <img src="lion.jpg" alt="Lion">
       </a> -->
-      
+
       <h3>Цель совместной разработки</h3>
-      <p>Наша цель заключается в получение опыта в создание сайтов, а также  добиться тесного и плодотворного сотрудничества <p>между нами для коллективного решения поставленных задач.</p></p>
+      <p>Наша цель заключается в получение опыта в создание сайтов, а также добиться тесного и плодотворного
+        сотрудничества
+      <p>между нами для коллективного решения поставленных задач.</p>
+      </p>
     </div>
   </section>
   <!-- <script>
@@ -71,38 +74,64 @@
   </script>
   Counter(Likes()); -->
   <div class="buttons">
-    <p><input type="button" value=" Оцените нашу сраницу! " id="btn1" /></p>
-    
-
+    <p class="btn1"><input type="button" value=" Оцените нашу сраницу! " id="btn1" /></p>\
     <script type="text/javascript">
 
       var likeCount = 0;
-    function buttonClicked(likeCount){
-    // var text = (this === window) ? 'window' : this.id;
-    // alert( text );
-    if(confirm('Вам понравилась наша страничка?'))
-      { 
-        likeCount =  likeCount++;
-        return likeCount;
+      function buttonClicked(likeCount) {
+        // var text = (this === window) ? 'window' : this.id;
+        // alert( text );
+        if (confirm('Вам понравилась наша страничка?')) {
+          likeCount = likeCount++;
+          return likeCount;
+        }
+        alert("Спасибо, что уделили время");
       }
-      alert("Спасибо, что уделили время");
-    }
 
-    function Counter(likeCount)
-    {
-      alert('Наша страница понравилась '+likeCount+" человек");
-    }
-    
-    var button1 = document.getElementById('btn1');
-    var button2 = document.getElementById('btn2');
+      function Counter(likeCount) {
+        alert('Наша страница понравилась ' + likeCount + " человек");
+      }
 
-    button1.onclick = buttonClicked;
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      function myFunction() {
+        (async () => {
+          let response = await fetch('https://kav-api.kovalev.team/servodrive/lastActualData?servoDriveId=1');
+          let el = document.getElementById('demo')
+          el.innerHTML = ""
+          let text = await response.text(); // прочитать тело ответа как текст
+          for (const [key, value] of Object.entries(JSON.parse(text)[0])) {
+            const newEl = document.createElement("li")
+            newEl.appendChild(document.createTextNode(`${key}: ${value}`))
+            el.appendChild(newEl)
+            await sleep(100)
+          }
+        })()
+      }
+
+      var button1 = document.getElementById('btn1');
+
+      button1.onclick = buttonClicked;
 
 
-    button2.onclick = function(){ buttonClicked(); };
-</script>
+      button1.onclick = function () { buttonClicked(); };
+
+    </script>
+
   </div>
-  
+<section>
+<hr />
+  <div class="main">
+    <h2>JavaScript Confirm Box</h2>
+    <button class="btn" onclick="myFunction()">Try it</button>
+    <ul id="demo">
+
+    </ul>
+</div>
+</section>
+
 </body>
 
 </html>
